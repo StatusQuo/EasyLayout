@@ -1,11 +1,3 @@
-//
-//  ListFunctionBuilder.swift
-//  lottieTestApp
-//
-//  Created by Sebastian Humann on 06.09.19.
-//  Copyright © 2019 sipgate GmbH. All rights reserved.
-//
-
 import Foundation
 
 
