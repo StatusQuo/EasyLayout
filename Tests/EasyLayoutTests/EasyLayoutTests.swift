@@ -6,7 +6,7 @@ final class EasyLayoutTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(EasyLayout().text, "Hello, World!")
+        XCTAssertEqual("123", "123")
     }
 
     static var allTests = [

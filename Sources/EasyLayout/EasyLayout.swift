@@ -28,7 +28,6 @@ extension UIView {
     }
 }
 
-@available(iOS 9.0, *)
 extension UIStackView {
     public func arrange(@ListBuilder build: () -> Listable) -> UIStackView {
         if let list = build().asList() as? [UIView] {
