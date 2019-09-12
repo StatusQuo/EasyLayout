@@ -1,6 +1,6 @@
 # EasyLayout
 
-A description of this package.
+A small collection of function builders for autolayout in code.
 
 ## Example
 
@@ -59,20 +59,32 @@ A description of this package.
 
 ### After
 ```swift
-    
+    //add subviews and arragned subviews, deactivates autorresizing mask
     view.add {
-        body.arrange {
-            image
-            SomeLabel(text: "hii", color: .blue)
-            SomeLabel(text: "__", color: .blue)
+        content.arrange {
+            foo
+            bar
+        }
+        buttonContainer.add {
+            button
         }
     }
 
+    //collects constraints and activates them
     layout {
-        body.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        body.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
-        body.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor)
-        body.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        content.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50)
+        content.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor)
+        content.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        buttonContainer.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+        buttonContainer.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+        buttonContainer.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
+        button.centerXAnchor.constraint(equalTo: buttonContainer.centerXAnchor)
+        button.bottomAnchor.constraint(equalTo: buttonContainer.bottomAnchor, constant: -32)
+        button.topAnchor.constraint(equalTo: buttonContainer.topAnchor, constant: 32)
     }
 
 ```
+
+## Install
+
+via SwiftPackageManager
