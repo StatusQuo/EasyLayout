@@ -18,13 +18,14 @@ extension UIViewController {
 }
 
 extension UIView {
-    public func add(@ListBuilder build: () -> Listable) {
+    public func add(@ListBuilder build: () -> Listable) -> UIView {
         if let list = build().asList() as? [UIView] {
             list.forEach { view in
                 view.translatesAutoresizingMaskIntoConstraints = false
                 self.addSubview(view)
             }
         }
+        return self
     }
 }
 
