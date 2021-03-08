@@ -24,12 +24,6 @@ import Foundation
             }
         }
 
-        extension SettingsList {
-            public func add(@ListBuilder <SettingsCell> build: () -> [SettingsCell]) {
-                build().forEach { append($0) }
-            }
-        }
-
         @resultBuilder
         public struct ListBuilder<T> {
             public typealias Component = [T]
